@@ -1,16 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    optimizePackageImports: ['@tailwindcss/postcss'],
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
   },
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@tailwindcss/postcss': require.resolve('@tailwindcss/postcss')
-    }
-    return config
-  },
-  reactStrictMode: true,
 }
-
-module.exports = nextConfig
